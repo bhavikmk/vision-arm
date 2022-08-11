@@ -1,0 +1,4 @@
+/kuka_arm/gripper_controller/command
+/kuka_arm/arm_controller/command
+
+kuka_arm/joint_states
