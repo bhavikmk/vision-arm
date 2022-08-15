@@ -10,7 +10,10 @@ Coming soon....
 
 ### Method
 
-Coming soon....
+1. Working with RGB and depth image directly
+2. Converting RGBD to Pointcloud and then use it
+
+Note: RGBD Camera is static 
 
 ### Flowchart
 
