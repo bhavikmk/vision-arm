@@ -104,6 +104,7 @@ MAX_VOLTAGE = 48.0 # Assume a 48V DC bus voltage limit
 # NOTE: The previous gains were not suitable for a high-inertia system with a constant load.
 # The new gains are tuned to be more stable and effective.
 # Position loop: Slower, with D-term for stability.
+
 position_controller = PIDController(Kp=5.0, Ki=0.5, Kd=2.0)
 
 # Speed controller: Now includes an Integral (I) term to eliminate steady-state error from the load torque.
