@@ -110,5 +110,39 @@ if __name__ == "__main__":
 
     for i in range(len(ts)):
         q_deg_formatted = [f"{x:.2f}" for x in np.degrees(Q[i])]
-        print(f"t={ts[i]:.2f} s  |  q_deg={q_deg_formatted}")
+        print(f"t={ts[i]:.2f} s  |  q_deg={q_deg_formatted}")    # Plotting example (requires matplotlib)
+    try:
+        import matplotlib.pyplot as plt
 
+        plt.figure(figsize=(12, 8))
+
+        # Plot positions
+        plt.subplot(3, 1, 1)
+        plt.plot(ts, np.degrees(Q))
+        plt.title('Joint Positions')
+        plt.ylabel('Angle (deg)')
+        plt.grid(True)
+        plt.legend([f'Joint {i+1}' for i in range(traj.dof)], loc='upper left')
+
+        # Plot velocities
+        plt.subplot(3, 1, 2)
+        plt.plot(ts, np.degrees(dQ))
+        plt.title('Joint Velocities')
+        plt.ylabel('Velocity (deg/s)')
+        plt.grid(True)
+        plt.legend([f'Joint {i+1}' for i in range(traj.dof)], loc='upper left')
+
+        # Plot accelerations
+        plt.subplot(3, 1, 3)
+        plt.plot(ts, np.degrees(ddQ))
+        plt.title('Joint Accelerations')
+        plt.xlabel('Time (s)')
+        plt.ylabel('Acceleration (deg/s^2)')
+        plt.grid(True)
+        plt.legend([f'Joint {i+1}' for i in range(traj.dof)], loc='upper left')
+
+        plt.tight_layout()
+        plt.show()
+
+    except ImportError:
+        print("\nMatplotlib not found. Skipping plot generation.")
