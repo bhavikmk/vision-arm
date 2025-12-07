@@ -23,6 +23,5 @@ Coming soon....
 
 ### References
 
-
-
+[Joint Controller Profile](https://github.com/bhavikmk/vision-arm/blob/main/doc/Joints%20Profile.png)
 ### Usage
